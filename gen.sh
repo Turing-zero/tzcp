@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# echo "Usage: gen.sh [input_dir=/absolute/to/tzcp] [output_dir=tzcp]"
+
 # $1 input files dir , $2 output dir
 if [ -z $1 ]; then
-    echo "Usage: gen.sh input_dir [output_dir=tzcp]"
-    exit 1
+    SCRIPT_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
+    INPUT_DIR=$SCRIPT_DIR
+else
+    INPUT_DIR=$1
 fi
 
 if [ -z $2 ]; then
@@ -12,9 +16,12 @@ else
     OUTPUT_DIR=$2
 fi
 
+echo "input dir  : $INPUT_DIR"
+echo "output dir : $OUTPUT_DIR"
+
 mkdir -p $OUTPUT_DIR
 
-dir_name=$1
+dir_name=$INPUT_DIR
 all_files=()
 include_dirs=()
 
