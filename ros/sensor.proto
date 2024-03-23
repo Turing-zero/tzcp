@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "tz/proto/rosmsg/std.proto";
-import "tz/proto/rosmsg/geometry.proto";
+import "ros/std.proto";
+import "ros/geometry.proto";
 
 package tz.ros.sensor; // definition from ros msg - sensor_msgs
 

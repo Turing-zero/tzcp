@@ -103,7 +103,7 @@ message MultiArrayLayout {
     // # to inner most.
 
     // MultiArrayDimension[] dim # Array of dimension properties
-    MultiArrayDimension dim = 1;
+    repeated MultiArrayDimension dim = 1;
     // uint32 data_offset        # padding elements at front of data
     uint32 data_offset = 2;
 
@@ -137,30 +137,30 @@ message ByteMultiArray {
 
 message UInt32MultiArray {
     MultiArrayLayout layout = 1;
-    uint32[] data = 2;
+    repeated uint32 data = 2;
 }
 
 message UInt64MultiArray {
     MultiArrayLayout layout = 1;
-    uint64[] data = 2;
+    repeated uint64 data = 2;
 }
 
 message Int32MultiArray {
     MultiArrayLayout layout = 1;
-    int32[] data = 2;
+    repeated int32 data = 2;
 }
 
 message Int64MultiArray {
     MultiArrayLayout layout = 1;
-    int64[] data = 2;
+    repeated int64 data = 2;
 }
 
 message Float32MultiArray {
     MultiArrayLayout layout = 1;
-    float[] data = 2;
+    repeated float data = 2;
 }
 
 message Float64MultiArray {
     MultiArrayLayout layout = 1;
-    double[] data = 2;
+    repeated double data = 2;
 }
