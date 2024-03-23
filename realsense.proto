@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "tz/proto/rosmsg/std.proto";
+import "tz/proto/rosmsg/sensor.proto";
+
+package tz.realsense; // convert from https://github.com/IntelRealSense/realsense-ros/tree/ros2-development/realsense2_camera_msgs/msg
+
+message Extrinsics{
+    repeated double rotation = 1; // float64[9] // Column - major 3x3 rotation matrix
+    repeated double translation = 2; // float64[3] // Three-element translation vector, in meters
+}
+
+message RGBD{
+    tz.ros.std.Header header = 1;
+    tz.ros.sensor.CameraInfo rgb_camera_info = 2;
+    tz.ros.sensor.CameraInfo depth_camera_info = 3;
+    tz.ros.sensor.Image rgb = 4;
+    tz.ros.sensor.Image depth = 5;
+    tz.realsense.Extrinsics rgb_to_depth = 6;
+}
+
+message Metadata{
+    tz.ros.std.Header header = 1;
+    string json_data = 2;
+}
+
+// header.frame_id is either set to "imu_accel" or "imu_gyro"
+// to distinguish between "accel" and "gyro" info.
+message IMUInfo{
+    tz.ros.std.Header header = 1;
+    repeated double data = 2; // float64[12]
+    repeated double noise_variances = 3; // float64[3]
+    repeated double bias_variances = 4; // float64[3]
+}

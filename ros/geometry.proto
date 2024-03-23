@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+import "tz/proto/rosmsg/std.proto";
+
+package tz.ros.geometry; // definition from ros msg - geometry_msgs
+
+message Vector3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Point {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+message Quaternion{
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float w = 4;
+}
+
+message Pose2D{
+    float x = 1;
+    float y = 2;
+    float theta = 3;
+}
+
+message Pose {
+    Point position = 1;
+    Quaternion orientation = 2;
+}
+
+message PoseStamped{
+    tz.ros.std.Header header = 1;
+    Pose pose = 2;
+}
+
+message PoseWithCovariance{
+    // # This represents a pose in free space with uncertainty.
+    Pose pose = 1;
+    // # The orientation parameters use a fixed-axis representation.
+    // # In order, the parameters are:
+    // # (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+    // float64[36] covariance
+    repeated double covariance = 2;
+}
+
+message Twist {
+    Vector3 linear = 1;
+    Vector3 angular = 2;
+}
+
+message TwistWithCovariance {
+    // # This expresses velocity in free space with uncertainty.
+    Twist twist = 1;
+    // # Row-major representation of the 6x6 covariance matrix
+    // # The orientation parameters use a fixed-axis representation.
+    // # In order, the parameters are:
+    // # (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+    // float64[36] covariance
+    repeated double covariance = 2;
+}
+
+message Transform {
+    Vector3 translation = 1;
+    Quaternion rotation = 2;
+}
+
+message Accel{
+    Vector3 linear = 1;
+    Vector3 angular = 2;
+}
+
+message Wrench {
+    Vector3 force = 1;
+    Vector3 torque = 2;
+}

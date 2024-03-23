@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tz.ros.std; // definition from ros msg - std_msgs
+
+message Bool {
+    bool data = 1;
+}
+
+message ColorRGBA {
+    float r = 1;
+    float g = 2;
+    float b = 3;
+    float a = 4;
+}
+
+message Header {
+    uint32 seq = 1;
+    float stamp = 2;
+    string frame_id = 3;
+}
