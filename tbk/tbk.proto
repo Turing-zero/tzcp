@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "google/protobuf/timestamp.proto";
-package tbk;
+package tbk.pb;
 message EndPoint{
     string address = 1;
     int32 port = 2;
