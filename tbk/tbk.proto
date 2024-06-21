@@ -1,5 +1,4 @@
 syntax = "proto3";
-import "google/protobuf/timestamp.proto";
 package tbk.pb;
 message EndPoint{
     string address = 1;
@@ -49,15 +48,17 @@ message State{
 }
 
 message MsgWrap{
-    google.protobuf.Timestamp send_time = 1;
-    int32 index = 2;
+    uint64 send_time = 1;// microseconds since epoch
+    string uuid = 2;
+    int32 index = 3;
     enum ProtocolType{
         PB = 0; // protobuf
         JSON = 1;
         YAML = 2;
         BYTES = 3;
     }
-    ProtocolType type = 3;
-    string type_url = 4; // message type like "std_msgs/String"
+    ProtocolType type = 4;
+    //string type_url = 4; // message type like "std_msgs/String"
     bytes data = 5;
 }
+
