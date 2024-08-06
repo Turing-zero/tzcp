@@ -1,6 +1,6 @@
 syntax = "proto3";
 package tbk.rpc;
-import "tbk.proto";
+import "tbk/tbk.proto";
 
 service zrpc {
     rpc Add (AddReq) returns (AddRes) {}

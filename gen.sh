@@ -11,7 +11,7 @@ else
 fi
 
 if [ -z $2 ]; then
-    OUTPUT_DIR="tzcp"
+    OUTPUT_DIR="tzcp_gen"
 else
     OUTPUT_DIR=$2
 fi

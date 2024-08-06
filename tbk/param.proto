@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbk.pb;
+message ParamWrap{
+    string value = 1;
+    string type = 2;
+    string info = 3;
+}
