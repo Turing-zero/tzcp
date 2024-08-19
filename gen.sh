@@ -2,7 +2,7 @@
 
 # echo "Usage: gen.sh [output_dir=tzcp_gen]"
 SCRIPT_DIR="$( dirname -- "${BASH_SOURCE[0]}" )"
-INPUT_DIR=$SCRIPT_DIR
+INPUT_DIR=$SCRIPT_DIR/tzcp
 # $1 output dir
 if [ -z $1 ]; then
     OUTPUT_DIR="tzcp_gen"

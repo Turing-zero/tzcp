@@ -1,0 +1,24 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "setuptools_scm>=8",
+    "setuptools-grpc"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+[project]
+name = "tzcp"
+dynamic = ["version"]
+description = "Turing-zero Communication Protocol in Protobuf"
+authors = [
+    {name = "MarkHtz", email = "feiwumark@gmail.com"},
+    {name = "Turing-zero Robotics", email = "turingzero.robot@gmail.com"},
+]
+dependencies = [
+]
+keywords = ["robotics","ros","robocup","turing-zero","tbk"]
+
+# [project.scripts]
+# tzcp = "tzcp.init:gen_pb"

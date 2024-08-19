@@ -2,3 +2,13 @@
 *.pb.h
 *.pb.cc
 __temp__*
+
+build/
+dist/
+_build/
+_generate/
+*.so
+*.py[cod]
+*.egg-info
+*env*
+
