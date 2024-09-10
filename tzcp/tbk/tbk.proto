@@ -4,6 +4,17 @@ message EndPoint{
     string address = 1;
     int32 port = 2;
 }
+message DeviceInfo{
+    string uuid = 1; // leave as empty string if not available
+    // got all info from 'hostnamectl' command
+    string static_hostname = 2;
+    string icon_name = 3;
+    string machine_id = 4;
+    string boot_id = 5;
+    string os = 6;
+    string kernel = 7;
+    string arch = 8;
+}
 message Subscriber{
     EndPoint ep = 1;
     string puuid = 2;
@@ -45,6 +56,7 @@ message State{
     ProcessState state = 5;
     EndPoint ep = 6;
     Info info = 7;
+    DeviceInfo device_info = 8;
 }
 
 message MsgWrap{
