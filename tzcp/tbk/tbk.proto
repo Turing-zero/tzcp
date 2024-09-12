@@ -70,7 +70,7 @@ message MsgWrap{
         BYTES = 3;
     }
     ProtocolType type = 4;
-    //string type_url = 4; // message type like "std_msgs/String"
     bytes data = 5;
+    string type_url = 6; // message type like "std_msgs/String"
 }
 
