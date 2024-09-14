@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "ros/std.proto";
-import "ros/sensor.proto";
+import "tzcp/ros/std.proto";
+import "tzcp/ros/sensor.proto";
 
 package tz.realsense; // convert from https://github.com/IntelRealSense/realsense-ros/tree/ros2-development/realsense2_camera_msgs/msg
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "ros/std.proto";
+import "tzcp/ros/std.proto";
 
 package tz.ros.achermann; // definition from ros msg - achermann_msgs / https://docs.ros.org/en/jade/api/ackermann_msgs/html/index-msg.html
 

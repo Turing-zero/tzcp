@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "ros/std.proto";
-import "ros/geometry.proto";
+import "tzcp/ros/std.proto";
+import "tzcp/ros/geometry.proto";
 
 package tz.ros.nav; // definition from ros msg - nav_msgs - https://docs.ros.org/en/noetic/api/nav_msgs/html/index-msg.html
 

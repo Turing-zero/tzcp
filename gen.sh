@@ -19,7 +19,7 @@ dir_name=$INPUT_DIR
 all_files=()
 include_dirs=()
 
-include_dirs+=("-I$dir_name")
+include_dirs+=("-I$SCRIPT_DIR")
 # get all .proto file in dir
 proto_files=$(find $dir_name -name "*.proto")
 for file in $proto_files

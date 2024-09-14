@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package ZSS.Protocol;
 
-import "ssl/rocos/zss_debug.proto";
+import "tzcp/ssl/rocos/zss_debug.proto";
 
 message RecMessages {
 	repeated RecMessage recMsgs = 1;

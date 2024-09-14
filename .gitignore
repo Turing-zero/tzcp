@@ -1,4 +1,6 @@
+*_pb2_grpc.py
 *_pb2.py
+*_pb2.pyi
 *.pb.h
 *.pb.cc
 __temp__*

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "ros/std.proto";
+import "tzcp/ros/std.proto";
 
 package tz.ros.geometry; // definition from ros msg - geometry_msgs
 
