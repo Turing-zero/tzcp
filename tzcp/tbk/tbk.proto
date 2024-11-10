@@ -15,28 +15,29 @@ message DeviceInfo{
     string kernel = 7;
     string arch = 8;
 }
+message EPInfo{
+    string node_ns = 1;
+    string node_name = 2;
+    string ns = 3;
+    string name = 4;
+    string msg_name = 5;
+    string msg_type = 6; // { Protobuf | Json | Yaml | Bytes }
+    string msg_type_url = 7; // message type like "std_msgs/String"
+}
 message Subscriber{
     EndPoint ep = 1;
     string puuid = 2;
     int32 pid = 3;
     string uuid = 4;
-    string msg_name = 5;
-    string name = 6;
-    string node_name = 7;
-    string node_ns = 8;
-    string ns = 9;
+    EPInfo ep_info = 5;
 }
 message Publisher{
     string ip = 1;
     string puuid = 2;
     int32 pid = 3;
     string uuid = 4;
-    string msg_name = 5;
-    string name = 6;
-    string node_name = 7;
-    string node_ns = 8;
-    string ns = 9;
-    repeated Subscriber subs = 10;
+    EPInfo ep_info = 5;
+    repeated Subscriber subs = 6;
 }
 message Info{
     repeated Subscriber subs = 1;
@@ -63,14 +64,6 @@ message MsgWrap{
     uint64 send_time = 1;// microseconds since epoch
     string uuid = 2;
     int32 index = 3;
-    enum ProtocolType{
-        PB = 0; // protobuf
-        JSON = 1;
-        YAML = 2;
-        BYTES = 3;
-    }
-    ProtocolType type = 4;
-    bytes data = 5;
-    string type_url = 6; // message type like "std_msgs/String"
+    bytes data = 4;
 }
 
